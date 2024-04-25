@@ -1,9 +1,8 @@
+import { dineroDisponible } from "./caso1.js";
 
-let dineroDisponible = 2500000;
 let diasEnMacondo = 0;
 
-
-function actividadesHotel() {
+export function actividadesHotel() {
     
     let coloresDias = ["amarillo", "verde", "rojo", "azul"];
 
@@ -16,6 +15,7 @@ function actividadesHotel() {
 
         // Pregunta por las actividades del día según el color
         if (colorDia === "amarillo") {
+
             let decisionAmarillo = prompt("¿Deseas ir a la piscina? (sí/no)").toLowerCase();
             if (decisionAmarillo === "sí") {
                 console.log("Te metes en la piscina y empiezas a sentirte ahogado. Demasiado cloro. ¡Mueres!");
@@ -24,6 +24,7 @@ function actividadesHotel() {
                 console.log("Decides no ir a la piscina. No pasa nada.");
             }
         } else if (colorDia === "verde") {
+
             let decisionVerde = prompt("¿Deseas ir a caminar y tomar agüita para el camino? (sí/no)").toLowerCase();
             if (decisionVerde === "sí") {
                 console.log("Decides ir toda la caminata y llegas a una hermosa cascada. Te tomas fotos.");
@@ -32,6 +33,7 @@ function actividadesHotel() {
                 return;
             }
         } else if (colorDia === "rojo") {
+
             let decisionRojo = prompt("¿Qué actividad en la playa prefieres: voleibol, nadar en el mar y montar moto, o tomar cócteles mientras descansas?").toLowerCase();
             if (decisionRojo === "voleibol" || decisionRojo === "nadar en el mar y montar moto") {
                 console.log("Disfrutas del día en la playa.");
@@ -40,6 +42,7 @@ function actividadesHotel() {
                 return;
             }
         } else if (colorDia === "azul") {
+
             let decisionAzul = prompt("¿Qué actividad prefieres dentro del hotel: bingo, bailar, o ir al casino y apostar?").toLowerCase();
             if (decisionAzul === "bingo" || decisionAzul === "bailar") {
                 console.log("Disfrutas de las actividades dentro del hotel.");
@@ -60,4 +63,3 @@ function actividadesHotel() {
     console.log(`Hildebrando gastó ${(2500000 - dineroDisponible).toLocaleString()} pesos.`);
 }
 
-actividadesHotel();

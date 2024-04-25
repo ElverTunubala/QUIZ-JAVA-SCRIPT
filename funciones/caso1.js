@@ -1,6 +1,5 @@
-export let a = console.log("soy el caso 1")
 
-let dineroDisponible = 2500000;
+export let dineroDisponible = 2500000;
 
 export function tomarDecision() {
     
@@ -19,12 +18,12 @@ export function tomarDecision() {
         console.log("Hildebrando decidió no comprar nada.");
         console.log("Le tocará comprar algo en Medellín.");
     } else {
-        console.log("Opción no válida. Por favor ingresa 1, 2 o 3.");
+        alert("Opción no válida. Por favor ingresa 1, 2 o 3.")
         tomarDecision(); 
         return;
     }
 
-    // Imprimir el dinero disponible actualizado
+    // Imprime el dinero disponible actualizado
     console.log(`Dinero disponible después de la compra: $${dineroDisponible}`);
 }
 

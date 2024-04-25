@@ -1,10 +1,10 @@
-
-let dineroDisponible = 2500000;
+import { dineroDisponible } from "./caso1.js";
 
 //simular una partida 
 export function jugarPiedraPapelTijera() {
-    // Genera una jugada aleatoria para Hildebrando
-    let jugadaHildebrando = Math.floor(Math.random() * 3); // 0: piedra, 1: papel, 2: tijera
+    
+    // Genera una jugada aleatoria para Hildebrando el .floor es para redondear al numero mas cercano hacia atras.
+    let jugadaHildebrando = Math.floor(Math.random() * 3); 
     
     // Genera una jugada aleatoria para el taxista
     let jugadaTaxista = Math.floor(Math.random() * 3); // 0: piedra, 1: papel, 2: tijera
@@ -12,6 +12,7 @@ export function jugarPiedraPapelTijera() {
     // resultado de la partida
     if (jugadaHildebrando === jugadaTaxista) {
         console.log("¡Empate!");
+
     } else if ((jugadaHildebrando === 0 && jugadaTaxista === 2) || 
                (jugadaHildebrando === 1 && jugadaTaxista === 0) || 
                (jugadaHildebrando === 2 && jugadaTaxista === 1)) {

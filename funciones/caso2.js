@@ -1,3 +1,12 @@
+// Dimensiones originales 
+let altoOriginal = 60;
+let largoOriginal = 40;
+let anchoOriginal = 20;
+
+// Dimensiones permitidas por la aerolínea
+let altoPermitido = 55;
+let largoPermitido = 40;
+let anchoPermitido = 20;
 
 export function ajustarDimensionesMaleta(altoOriginal, largoOriginal, anchoOriginal, altoPermitido, largoPermitido, anchoPermitido) {
     // factor de reducción para cada dimensión
@@ -20,6 +29,6 @@ export function ajustarDimensionesMaleta(altoOriginal, largoOriginal, anchoOrigi
         nuevoAncho: nuevoAncho
     };
 }
-
+export let nuevasDimensiones = ajustarDimensionesMaleta(altoOriginal, largoOriginal, anchoOriginal, altoPermitido, largoPermitido, anchoPermitido);
 
 
