@@ -2,8 +2,8 @@ import {tomarDecision} from './funciones/caso1.js'
 import{nuevasDimensiones} from './funciones/caso2.js'
 import {contrasena} from './funciones/caso3.js'
 import {cadenaModificada} from './funciones/caso4.js'
-import {jugarPiedraPapelTijera} from './funciones/caso5.js'
-import { actividadesHotel } from './funciones/caso6.js'
+import {jugarPiedraPapelTijera,dineroPiedra} from './funciones/caso5.js'
+import { actividadesHotel,dineroHOtel } from './funciones/caso6.js'
 
 
 //caso 1// Ejecutar la función para tomar la decisión de Hildebrando
@@ -27,9 +27,10 @@ console.log("Contraseña WiFi decodificada:", contrasena);
 console.log("Cadena modificada:", cadenaModificada);
 
 //caso 5
-let saldoJuego= jugarPiedraPapelTijera();
-console.log("saldo papel y tiejera:",saldoJuego)
-
+jugarPiedraPapelTijera();
+console.log("saldo papel y tijera:",dineroPiedra)
 
 // caso 6
 actividadesHotel();
+console.log("el dinero hotel:",dineroHOtel)
+

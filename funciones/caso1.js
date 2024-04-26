@@ -23,9 +23,7 @@ export function tomarDecision() {
     } else {
         alert("Opción no válida. Por favor ingresa 1, 2 o 3.")
         tomarDecision(); 
-        
     }
-
     // Imprime el dinero disponible actualizado
     console.log(`Dinero disponible después de la compra: $${dineroDisponible}`);
 }

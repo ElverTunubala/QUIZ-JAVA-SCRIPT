@@ -1,8 +1,9 @@
 import { dineroDisponible } from "./caso1.js";
+export let dineroPiedra = 0
 
 //simular una partida 
 export function jugarPiedraPapelTijera() {
-    
+     
     // Genera una jugada aleatoria para Hildebrando el .floor es para redondear al numero mas cercano hacia atras.
     let jugadaHildebrando = Math.floor(Math.random() * 3); 
     
@@ -12,16 +13,21 @@ export function jugarPiedraPapelTijera() {
     // resultado de la partida
     if (jugadaHildebrando === jugadaTaxista) {
         console.log("¡Empate!");
-
+        dineroPiedra = dineroDisponible;
+        
     } else if ((jugadaHildebrando === 0 && jugadaTaxista === 2) || 
                (jugadaHildebrando === 1 && jugadaTaxista === 0) || 
                (jugadaHildebrando === 2 && jugadaTaxista === 1)) {
         console.log("¡Hildebrando gana! El taxista no le cobrará los 300,000 pesos.");
-        return  dineroDisponible = dineroDisponible;
+        dineroPiedra = dineroDisponible;
 
     } else {
         console.log("¡El taxista gana! Se descontarán 300,000 pesos del dinero disponible de Hildebrando.");
-        return dineroDisponible -= 300000;
+        dineroPiedra = dineroDisponible-300000;
     }
 }
-console.log("Dinero disponible después de la partida:", dineroDisponible);
+
+export function caso5(){
+    jugarPiedraPapelTijera();
+    return dineroPiedra
+}

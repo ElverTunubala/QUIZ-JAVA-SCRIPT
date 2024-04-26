@@ -1,6 +1,8 @@
-import { dineroDisponible } from "./caso1.js";
+// import { dineroDisponible } from "./caso1.js";
+import { caso5 } from "./caso5.js";
 
 let diasEnMacondo = 0;
+export let dineroHOtel = caso5();
 
 export function actividadesHotel() {
     
@@ -61,8 +63,8 @@ export function actividadesHotel() {
             let decisionAzul = prompt("¿Qué actividad prefieres dentro del hotel: bingo, bailar, casino ?").toLowerCase();
 
             if (decisionAzul === "bingo" ) {
-                return dineroDisponible += 100000
                 console.log("felicitaciones has ganado las suma de $100.000");
+                dineroHOtel += 100000
 
             }else if(decisionAzul === "bailar"){
                 console.log("Disfrutas del baile dentro del hotel.");
@@ -74,11 +76,9 @@ export function actividadesHotel() {
             }
         } else {
             console.log("Color de día no válido.");
-            return;
+           
         }
     }
-
-    
 }
 
 // Si llega al final de la semana sin incidentes, se imprime el resultado final
