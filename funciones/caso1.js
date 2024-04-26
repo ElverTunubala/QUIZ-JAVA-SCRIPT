@@ -1,4 +1,3 @@
-
 export let dineroDisponible = 2500000;
 
 export function tomarDecision() {
@@ -7,20 +6,24 @@ export function tomarDecision() {
 
     // Actualizar el dinero disponible según la decisión de Hildebrando
     if (decision === "1") {
-        dineroDisponible -= 15000;
         console.log("Hildebrando compró una almojábana con gaseosa por $15,000.");
         console.log("Le caerá mal porque lleva mucho en el stand.");
+        return dineroDisponible -= 15000;
+
     } else if (decision === "2") {
-        dineroDisponible -= 23000;
         console.log("Hildebrando compró un Subway con gaseosa por $23,000.");
         console.log("Estará llenito y bien.");
+        return dineroDisponible -= 23000;
+
     } else if (decision === "3") {
         console.log("Hildebrando decidió no comprar nada.");
         console.log("Le tocará comprar algo en Medellín.");
+        return dineroDisponible=dineroDisponible;
+
     } else {
         alert("Opción no válida. Por favor ingresa 1, 2 o 3.")
         tomarDecision(); 
-        return;
+        
     }
 
     // Imprime el dinero disponible actualizado

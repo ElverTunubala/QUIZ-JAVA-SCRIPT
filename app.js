@@ -5,8 +5,10 @@ import {cadenaModificada} from './funciones/caso4.js'
 import {jugarPiedraPapelTijera} from './funciones/caso5.js'
 import { actividadesHotel } from './funciones/caso6.js'
 
+
 //caso 1// Ejecutar la función para tomar la decisión de Hildebrando
-tomarDecision();
+let saldoTotal = tomarDecision();
+console.log("saldoTotal caso 1:", saldoTotal)
 
 //caso 2
 
@@ -25,7 +27,9 @@ console.log("Contraseña WiFi decodificada:", contrasena);
 console.log("Cadena modificada:", cadenaModificada);
 
 //caso 5
-jugarPiedraPapelTijera();
+let saldoJuego= jugarPiedraPapelTijera();
+console.log("saldo papel y tiejera:",saldoJuego)
+
 
 // caso 6
 actividadesHotel();

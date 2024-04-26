@@ -17,9 +17,11 @@ export function jugarPiedraPapelTijera() {
                (jugadaHildebrando === 1 && jugadaTaxista === 0) || 
                (jugadaHildebrando === 2 && jugadaTaxista === 1)) {
         console.log("¡Hildebrando gana! El taxista no le cobrará los 300,000 pesos.");
+        return  dineroDisponible = dineroDisponible;
+
     } else {
         console.log("¡El taxista gana! Se descontarán 300,000 pesos del dinero disponible de Hildebrando.");
-        dineroDisponible -= 300000;
+        return dineroDisponible -= 300000;
     }
 }
 console.log("Dinero disponible después de la partida:", dineroDisponible);

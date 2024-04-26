@@ -5,50 +5,72 @@ let diasEnMacondo = 0;
 export function actividadesHotel() {
     
     let coloresDias = ["amarillo", "verde", "rojo", "azul"];
-
+    let numColoresDia = coloresDias.length
+    
     // Iterar sobre cada día de la estadía en el hotel
-    for (let i = 0; i < coloresDias.length; i++) {
-        let colorDia = coloresDias[i];
+    for (let i = 0; i < numColoresDia; i++) {
         diasEnMacondo++;
 
-        console.log(`\nDía ${diasEnMacondo}: Color del día - ${colorDia}`);
+        let indiceColores = Math.floor(Math.random() * coloresDias.length)
+        let colorAleatorio = coloresDias[indiceColores];
+        
+        console.log(`\nDía ${diasEnMacondo}: Color del día - ${colorAleatorio}`);
 
         // Pregunta por las actividades del día según el color
-        if (colorDia === "amarillo") {
+        if (colorAleatorio === "amarillo") {
 
-            let decisionAmarillo = prompt("¿Deseas ir a la piscina? (sí/no)").toLowerCase();
-            if (decisionAmarillo === "sí") {
-                console.log("Te metes en la piscina y empiezas a sentirte ahogado. Demasiado cloro. ¡Mueres!");
-                return;
+            coloresDias.splice(indiceColores,1); 
+            let decisionAmarillo = prompt("¿Deseas ir a la piscina? (si/no)").toLowerCase();
+
+            if (decisionAmarillo === "si") {
+                alert("Demasiado cloro y ¡Murio!");
+                return numColoresDia =5
+
             } else {
                 console.log("Decides no ir a la piscina. No pasa nada.");
             }
-        } else if (colorDia === "verde") {
+        } else if (colorAleatorio === "verde") {
 
-            let decisionVerde = prompt("¿Deseas ir a caminar y tomar agüita para el camino? (sí/no)").toLowerCase();
-            if (decisionVerde === "sí") {
+            coloresDias.splice(indiceColores,1); 
+            let decisionVerde = prompt("¿Deseas ir a caminar y tomar agüita para el camino? (si/no)").toLowerCase();
+
+            if (decisionVerde === "si") {
                 console.log("Decides ir toda la caminata y llegas a una hermosa cascada. Te tomas fotos.");
             } else {
-                console.log("Decides no ir toda la caminata. Llegas a cierto punto y te devuelves solo. Luego te pierdes por la noche.");
-                return;
+                console.log("vas hasta cierto punto y te devuelves solo. Luego te pierdes.");
+                
             }
-        } else if (colorDia === "rojo") {
+        } else if (colorAleatorio === "rojo") {
 
-            let decisionRojo = prompt("¿Qué actividad en la playa prefieres: voleibol, nadar en el mar y montar moto, o tomar cócteles mientras descansas?").toLowerCase();
-            if (decisionRojo === "voleibol" || decisionRojo === "nadar en el mar y montar moto") {
-                console.log("Disfrutas del día en la playa.");
+            coloresDias.splice(indiceColores,1); 
+            let decisionRojo = prompt("¿Qué actividad en la playa prefieres: voleibol, mar, montar moto, descansar?").toLowerCase();
+
+            if ((decisionRojo === "voleibol") ||
+                     (decisionRojo === "mar") ||
+                     (decisionRojo === "montar moto")) {
+                console.log("Disfrutas del día en la playa y el mar");
             } else {
-                console.log("Te pones a tomar cócteles mientras descansas. De pronto sientes un fuerte dolor de cabeza y empiezas a perder la visión. ¡El chirrinchi estaba adulterado! Tienes que devolverte de emergencia. ¡Terminan las vacaciones!");
-                return;
+                console.log("¡El chirrinchi estaba adulterado! Tienes que devolverte de emergencia. ¡Terminan las vacaciones!");
+                alert("TERMINA LAS VACACIONES")
+                return numColoresDia =5
+                
             }
-        } else if (colorDia === "azul") {
+        } else if (colorAleatorio === "azul") {
 
-            let decisionAzul = prompt("¿Qué actividad prefieres dentro del hotel: bingo, bailar, o ir al casino y apostar?").toLowerCase();
-            if (decisionAzul === "bingo" || decisionAzul === "bailar") {
-                console.log("Disfrutas de las actividades dentro del hotel.");
-            } else {
-                console.log("Vas al casino y apuestas, pero solo te quedas con el pasaje de regreso. ¡Terminan las vacaciones!");
-                return;
+            coloresDias.splice(indiceColores,1); 
+            let decisionAzul = prompt("¿Qué actividad prefieres dentro del hotel: bingo, bailar, casino ?").toLowerCase();
+
+            if (decisionAzul === "bingo" ) {
+                return dineroDisponible += 100000
+                console.log("felicitaciones has ganado las suma de $100.000");
+
+            }else if(decisionAzul === "bailar"){
+                console.log("Disfrutas del baile dentro del hotel.");
+            }
+             else {
+                console.log("apostastes y perdistes, ¡Terminan las vacaciones!");
+                return numColoresDia =5
+                
             }
         } else {
             console.log("Color de día no válido.");
@@ -56,10 +78,12 @@ export function actividadesHotel() {
         }
     }
 
-    // Si llega al final de la semana sin incidentes, se imprime el resultado final
-    console.log("\nResultado final:");
-    console.log(`Hildebrando estuvo en Macondo durante ${diasEnMacondo} días.`);
-    console.log("Hildebrando pudo regresar de Macondo.");
-    console.log(`Hildebrando gastó ${(2500000 - dineroDisponible).toLocaleString()} pesos.`);
+    
 }
+
+// Si llega al final de la semana sin incidentes, se imprime el resultado final
+// console.log("\nResultado final:");
+// console.log(`Hildebrando estuvo en Macondo durante ${diasEnMacondo} días.`);
+// console.log("Hildebrando pudo regresar de Macondo.");
+// console.log(`Hildebrando gastó ${(2500000 - dineroDisponible).toLocaleString()} pesos.`);
 
