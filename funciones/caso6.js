@@ -1,8 +1,8 @@
-// import { dineroDisponible } from "./caso1.js";
-import { caso5 } from "./caso5.js";
 
-let diasEnMacondo = 0;
-export let dineroHOtel = caso5();
+export let diasEnMacondo = 0;
+export let dineroBingo = 0;
+export let casino = false;
+export let muerte = false;
 
 export function actividadesHotel() {
     
@@ -26,6 +26,7 @@ export function actividadesHotel() {
 
             if (decisionAmarillo === "si") {
                 alert("Demasiado cloro y ¡Murio!");
+                muerte = true
                 return numColoresDia =5
 
             } else {
@@ -34,22 +35,22 @@ export function actividadesHotel() {
         } else if (colorAleatorio === "verde") {
 
             coloresDias.splice(indiceColores,1); 
-            let decisionVerde = prompt("¿Deseas ir a caminar y tomar agüita para el camino? (si/no)").toLowerCase();
+            let decisionVerde = prompt("¿Deseas ir a caminar? (si/no)").toLowerCase();
 
             if (decisionVerde === "si") {
                 console.log("Decides ir toda la caminata y llegas a una hermosa cascada. Te tomas fotos.");
+
             } else {
                 console.log("vas hasta cierto punto y te devuelves solo. Luego te pierdes.");
-                
             }
         } else if (colorAleatorio === "rojo") {
 
             coloresDias.splice(indiceColores,1); 
-            let decisionRojo = prompt("¿Qué actividad en la playa prefieres: voleibol, mar, montar moto, descansar?").toLowerCase();
+            let decisionRojo = prompt("¿Qué actividad en la playa prefieres: voleibol, mar, moto, descansar?").toLowerCase();
 
             if ((decisionRojo === "voleibol") ||
                      (decisionRojo === "mar") ||
-                     (decisionRojo === "montar moto")) {
+                     (decisionRojo === "moto")) {
                 console.log("Disfrutas del día en la playa y el mar");
             } else {
                 console.log("¡El chirrinchi estaba adulterado! Tienes que devolverte de emergencia. ¡Terminan las vacaciones!");
@@ -64,13 +65,14 @@ export function actividadesHotel() {
 
             if (decisionAzul === "bingo" ) {
                 console.log("felicitaciones has ganado las suma de $100.000");
-                dineroHOtel += 100000
+                dineroBingo = 100000
 
             }else if(decisionAzul === "bailar"){
                 console.log("Disfrutas del baile dentro del hotel.");
             }
              else {
                 console.log("apostastes y perdistes, ¡Terminan las vacaciones!");
+                casino = true;
                 return numColoresDia =5
                 
             }
@@ -81,9 +83,6 @@ export function actividadesHotel() {
     }
 }
 
-// Si llega al final de la semana sin incidentes, se imprime el resultado final
-// console.log("\nResultado final:");
-// console.log(`Hildebrando estuvo en Macondo durante ${diasEnMacondo} días.`);
-// console.log("Hildebrando pudo regresar de Macondo.");
-// console.log(`Hildebrando gastó ${(2500000 - dineroDisponible).toLocaleString()} pesos.`);
+
+
 

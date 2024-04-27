@@ -2,7 +2,7 @@ export let dineroDisponible = 2500000;
 
 export function tomarDecision() {
     
-    let decision = prompt("Hildebrando, ¿qué deseas comprar antes del vuelo?\n1. Almojábana con gaseosa - $15,000\n2. Subway con gaseosa - $23,000\n3. No comprar nada");
+    let decision = prompt("Hildebrando, ¿qué deseas comprar antes del vuelo?\n\n1. Almojábana con gaseosa - $15,000\n2. Subway con gaseosa - $23,000\n3. No comprar nada\n\n");
 
     // Actualizar el dinero disponible según la decisión de Hildebrando
     if (decision === "1") {
